@@ -1,0 +1,11 @@
+[
+  {
+    "model": "gpt-3.5-turbo",
+    "api_key": "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"
+  },
+  {
+    "model": "phi2",
+    "base_url": "http://localhost:1234/v1",
+    "api_key": "lm-studio"
+  }
+]
