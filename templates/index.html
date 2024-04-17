@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JSON Data Example</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>User Information</h1>
+        </header>
+        <main>
+            <section class="input-section">
+                <h2>Input</h2>
+                <form action="/" method="GET">
+                    <label for="input-field">Enter a value:</label>
+                    <input type="text" id="input-field" name="input_data" placeholder="Enter a name or keyword">
+                    <button type="submit">Submit</button>
+                </form>
+                <p>You entered: {{ input_data }}</p>
+            </section>
+            <section class="output-section">
+                <h2>Summary</h2>
+                {% if response_data %}
+                <div class="response-container">
+                    <div class="summary">
+                        <h3>Summary</h3>
+                        <p>{{ response_data.summary }}</p>
+                    </div>
+                    <div class="interesting-facts">
+                        <h3>Interesting Facts</h3>
+                        <ul>
+                            {% for fact in response_data.interesting_facts %}
+                            <li>{{ fact }}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    <div class="education">
+                        <h3>Education</h3>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>University</th>
+                                    <th>Degree</th>
+                                    <th>Duration</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for edu in response_data.education %}
+                                <tr>
+                                    <td>{{ edu.university }}</td>
+                                    <td>{{ edu.degree }}</td>
+                                    <td>{{ edu.duration }}</td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="activities">
+                        <h3>Activities Count</h3>
+                        <p>{{ response_data.activities_count }}</p>
+                    </div>
+                </div>
+                {% else %}
+                <p>No data to display yet.</p>
+                {% endif %}
+            </section>
+        </main>
+        <footer>
+            <p>&copy; 2023 JSON Data Example. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>

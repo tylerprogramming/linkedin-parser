@@ -33,7 +33,7 @@ def scrape_linkedin_profile(linkedin_profile_user_id: str, mock: bool = False):
         else:
             print(f"Request failed with status code: {response.status_code}")
 
-        data = data[0]
+    print(data)
 
     return data
 
