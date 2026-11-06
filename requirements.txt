@@ -27,7 +27,7 @@ langsmith==0.1.47
 MarkupSafe==2.1.5
 numpy==1.26.4
 openai==1.19.0
-packaging==24.0
+packaging==23.2
 pyautogen==0.2.24
 pydantic==2.7.0
 pydantic_core==2.18.1
