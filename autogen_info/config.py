@@ -6,7 +6,7 @@ load_dotenv()
 config_list = autogen.config_list_from_json(
     "OAI_CONFIG_LIST.json",
     filter_dict={
-        "model": ["gpt-3.5-turbo"],
+        "model": ["gpt-5.4-mini"],
     },
 )
 
@@ -20,7 +20,7 @@ config_list = autogen.config_list_from_json(
 web_scrape_config_list = autogen.config_list_from_json(
     "OAI_CONFIG_LIST.json",
     filter_dict={
-        "model": ["gpt-3.5-turbo"],
+        "model": ["gpt-5.4-mini"],
     },
 )
 
